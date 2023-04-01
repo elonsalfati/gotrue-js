@@ -259,7 +259,7 @@ async function sha256(randomString: string) {
   const encoder = new TextEncoder()
   const encodedData = encoder.encode(randomString)
   if (!isBrowser()) {
-	return sha256Ohash(randomString).toString()
+    return sha256Ohash(randomString).toString()
   }
   const hash = await window.crypto.subtle.digest('SHA-256', encodedData)
   const bytes = new Uint8Array(hash)
